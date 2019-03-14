@@ -2,16 +2,22 @@
 <html lang="cn">
 <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" type="text/css">
+     <link rel="icon" href="{{ url_for('static', filename='favicon.ico')}}">
      <title>{{ name }}的观影列表</title>
 </head>
 <body>
-     <h2>{{ name }}的观影列表</h2>
+     <h2>
+         <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png')}}">
+         {{ name }}的观影列表
+     </h2>
      <p>{{ movies|length }} 条记录</p>
-     <ul>
+     <ul class="movie-list">
          {% for movie in movies %}
           <li>{{ movie.title }} - {{ movie.year }}</li>
           {% endfor %}
      </ul>
+      <img class="totoro" src="http://helloflask.com/totoro.gif">
      <footer>
          <small>&copy; 2018 <a href="http://helloflask.com/tutorial">HelloFlask</a></small>
      </footer>
