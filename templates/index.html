@@ -4,12 +4,12 @@
      <meta charset="utf-8">
      <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" type="text/css">
      <link rel="icon" href="{{ url_for('static', filename='favicon.ico')}}">
-     <title>{{ name }}的观影列表</title>
+     <title>{{ user.name }}的观影列表</title>
 </head>
 <body>
      <h2>
          <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png')}}">
-         {{ name }}的观影列表
+         {{ user.name }}的观影列表
      </h2>
      <p>{{ movies|length }} 条记录</p>
      <ul class="movie-list">
