@@ -6,6 +6,48 @@ body {
     font-family: Helvetica, Arial, sans-serif; /* 三种字体 */
 }
 
+
+/* 导航 */
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 隐藏溢出元素 */
+    background-color: #333;
+}
+
+nav li{
+    float: left;
+}
+
+nav li a {
+    display: block;  /* 换行符 */
+    color: white;
+    text-align: center;
+    padding: 8px 12px;
+    text-decoration: none; /* 标准文本 */
+}
+
+
+nav li a:hover{
+    background-color: #111;
+}
+
+/* IMDb */
+.float-right{
+    float: right;
+}
+
+.imdb{
+    font-size: 12px;
+    font-weight: bold;  /* 字体粗细 */
+    color: black;
+    text-decoration: none;
+    background: #F5C518;
+    border-radius: 5px; /* 圆角边框 */
+    padding: 3px 5px;
+}
+
 /* 页脚 */
 footer {
     color: #888;

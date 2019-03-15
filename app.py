@@ -59,11 +59,22 @@ def forge():
     click.echo('Done.')
 
 
+@app.context_processor
+def inject_user():   #函数名可以随意修改
+    user = User.query.first()
+    return dict(user=user)   #需要返回字典，等同于return{'user': user}
+
+
 @app.route('/')
 def index():
-    user = User.query.first()
     movies = Movie.query.all()
-    return render_template('index.html', user=user, movies=movies)
+    return render_template('index.html', movies=movies)
+
+
+@app.errorhandler(404)  #传入要处理的错误代码
+def page_not_found(e):  #接受异常对象作为参数
+    return render_template('404.html'), 404 #返回模板和状态码
+
 
 
 if __name__ == '__main__':
