@@ -63,7 +63,7 @@ def forge():
 def index():
     user = User.query.first()
     movies = Movie.query.all()
-    return render_template('index.html', name=name, movies=movies)
+    return render_template('index.html', user=user, movies=movies)
 
 
 if __name__ == '__main__':
