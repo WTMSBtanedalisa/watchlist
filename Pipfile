@@ -10,10 +10,8 @@ coverage = "*"
 flask = "*"
 python-dotenv = "*"
 flask-sqlalchemy = "*"
-pythin = "*"
 python = "*"
 jinja2 = "*"
-logiin = "*"
 flask-login = "*"
 
 [requires]

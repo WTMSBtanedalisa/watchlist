@@ -15,7 +15,7 @@ app = Flask(__name__)
 # 注意更新这里的路径， 把 app.root_path 添加到 os.path.dirname()中
 # 以便把文件定位到项目根目录
 app.config['SQLALCHEMY_DATABASE_URI'] = prefix + os.path.join(os.path.dirname(app.root_path), os.getenv('DATABASE_FILE', 'data.db'))
-app.comfig['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
@@ -29,7 +29,7 @@ def load_user(user_id):
 login_manager.login_view = 'login'
 
 @app.context_processor
-def injrct_user():
+def inject_user():
     from watchlist.models import User
     user = User.query.first()
     return dict(user=user)
