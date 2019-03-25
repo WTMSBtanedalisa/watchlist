@@ -108,3 +108,4 @@ def logout():
     logout_user()
     flash('再你妈的见')
     return redirect(url_for('index'))
+
